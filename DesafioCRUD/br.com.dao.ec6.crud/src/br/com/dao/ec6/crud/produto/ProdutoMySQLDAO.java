@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe especifica para retornar dados do produto
  * @author gabriell
  * @param <E>
  */
@@ -23,17 +23,32 @@ public class ProdutoMySQLDAO <E extends Entidade> extends MySQLDAO {
     public ProdutoMySQLDAO() {
         super(Produto.class);
     }
-    
+
+    /**
+     * Método para localizar um produto pelo código sobreescrendo o metodo Localiza
+     * @param codigo
+     * @return
+     * @throws SQLException
+     */
     @Override
     public E localiza(String codigo) throws SQLException {
         return (E)super.localiza(codigo);
     }
-    
+
+    /**
+     * Metodo para localizar um produto pelo código
+     * @return
+     */
     @Override
     protected String getLocalizaCommand() {
         return "select * from tbProduto where cod_pro = ?";
     }
-       
+
+    /**
+     * Metodo para preencher um objeto com os dados do banco
+     * @param rs
+     * @return
+     */
     @Override
     protected E preencheEntidade(ResultSet rs) {
         Produto entidade = (Produto)super.getInstanceOfE();

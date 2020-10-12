@@ -12,11 +12,16 @@ import br.com.dao.ec6.crud.acesso.UsuarioMySQLDAO;
 import br.com.dao.ec6.crud.acesso.UsuarioTextoDAO;
 
 /**
- *
+ *Classe que retorna os objetos Fábrica do MySQL e do arquivo txt, de acordo com o parametro recebido
  * @author gabriell
  */
 public class FabricaDAOs {
-    
+    /**
+     * Metodo que indica o tipo de conexão a ser utilizada
+     * @param enumEntidade
+     * @param repositorio
+     * @return
+     */
     public static DAO Fabrica(EntidadesDisponiveis enumEntidade, TipoRepositorio repositorio) {
         switch (repositorio)
         {
@@ -30,6 +35,11 @@ public class FabricaDAOs {
        
     }
 
+    /**
+     * Metodo para montar uma DAO de aqrquivo texto
+     * @param enumEntidade
+     * @return
+     */
     private static DAO montaDAOTexto(EntidadesDisponiveis enumEntidade) {
         DAO retorno;
         switch (enumEntidade)
@@ -43,7 +53,12 @@ public class FabricaDAOs {
         }
         return retorno;    
     }
-    
+
+    /**
+     * Metodo para montar um DAO de MySQL
+     * @param enumEntidade
+     * @return
+     */
     private static DAO montaDAOMySQL(EntidadesDisponiveis enumEntidade) {
         DAO retorno;
         switch (enumEntidade)

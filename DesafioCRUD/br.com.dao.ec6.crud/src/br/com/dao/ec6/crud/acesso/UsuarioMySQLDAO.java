@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe responsável para configurar a conexão do Banco MySQL e as credenciais de acesso ao software
  * @author gabriell
  * @param <E>
  */

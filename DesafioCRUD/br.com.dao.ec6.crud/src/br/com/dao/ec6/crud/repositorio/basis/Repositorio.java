@@ -8,7 +8,7 @@ import br.com.comuns.crud.ec6.enums.EntidadesDisponiveis;
 import br.com.comuns.ec6.crud.basis.Entidade;
 
 /**
- *
+ *Classe abstrata para configurar a comunicação de dados com arquivo texto
  * @author gabriell
  */
 public abstract class Repositorio {

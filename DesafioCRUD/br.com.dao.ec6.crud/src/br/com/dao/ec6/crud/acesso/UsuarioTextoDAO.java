@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- *
+ * Classe para configurar a conexão entre software e txt e validar o usuário no banco
  * @author gabriell
  */
 public class UsuarioTextoDAO extends DAO {

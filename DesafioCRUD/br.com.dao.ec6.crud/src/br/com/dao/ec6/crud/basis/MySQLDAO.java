@@ -20,6 +20,7 @@ import java.util.ArrayList;
  *
  * @author gabriell
  * @param <E>
+ * Classe para configurar a conexão com o Banco de dados MySQL
  */
 public class MySQLDAO <E extends Entidade> extends DAO {
 
@@ -35,7 +36,12 @@ public class MySQLDAO <E extends Entidade> extends DAO {
     protected void setTabela(String value){
         tabela = value;
     }
-    
+
+    /**
+     * Metodo que retorna um objeto pesquisando pelo ID
+     * @param id
+     * @return
+     */
     @Override
     public E seleciona(int id) {
         // Não há retorno por id
@@ -43,7 +49,7 @@ public class MySQLDAO <E extends Entidade> extends DAO {
     }
 
     /**
-     *
+     * Metodo que retornar um objeto pesquisando pelo codigo
      * @param codigo
      * @return
      * @throws SQLException
@@ -65,6 +71,9 @@ public class MySQLDAO <E extends Entidade> extends DAO {
         return entidade;
     }
 
+    /**
+    * método que realiza um select no banco para retornar as informações solicitadas
+     */
     protected String getLocalizaCommand() {
         String campos = "";
         String chave = "";
@@ -81,6 +90,10 @@ public class MySQLDAO <E extends Entidade> extends DAO {
         return "select "+ campos+ " from "+ tabela +" where "+chave +" = ?";
     }
 
+    /**
+     * Metodo que retornar uma tabela de objetos
+     * @return
+     */
     protected String getListaCommand() {
         return "select * from " + tabela;
     }
@@ -88,7 +101,12 @@ public class MySQLDAO <E extends Entidade> extends DAO {
     protected E preencheEntidade(ResultSet rs) {
         throw new UnsupportedOperationException("Implementar na classe filha."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    /**
+     * Metodo sobrescrito para retornar uma lista de obejtos
+     * @return
+     * @throws SQLException
+     */
     @Override
     public ArrayList<E> lista() throws SQLException {
         ArrayList<E> entidades = new ArrayList();

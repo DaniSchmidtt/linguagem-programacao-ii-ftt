@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
- *
+ *Classe que realiza a conexão com arquivo texto, retornando objetos
  * @author gabriell
  */
 public class RepositorioArquivos extends Repositorio{

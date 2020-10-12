@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
+ *Classe ancestral para configurar a comunicação entre a base de dados e o Software
  * @author gabriell
  * @param <E>
  */
@@ -22,9 +22,9 @@ public abstract class DAO <E extends Entidade> {
         this.entityClass = entityClass;
     }
     
-    public abstract E seleciona(int id);
-    public abstract E localiza(String codigo) throws SQLException;
-    public abstract ArrayList<E> lista() throws SQLException;
+    public abstract E seleciona(int id); //Classe abstrata para retornar um objeto busacando pelo ID
+    public abstract E localiza(String codigo) throws SQLException; //Classe abstrata para retornar um objeto pelo código
+    public abstract ArrayList<E> lista() throws SQLException; //Classe abstrata que retornar uma lista de objetos
     
     protected E getInstanceOfE()
     {
